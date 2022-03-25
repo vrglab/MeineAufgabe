@@ -1,0 +1,24 @@
+html 
+{
+    scroll-behavior: smooth;
+}
+
+
+.info
+{
+    background-color:  #32a852;
+    color: #d4d4d4;
+    border: 3px solid green;
+    font-size: 120px;
+    text-align: center;
+    width: 100;
+    padding: 100px 0;
+}
+
+.gridRow {
+    border: 1px solid black;
+}
+
+.cell {
+    border: 1px solid black;
+}
