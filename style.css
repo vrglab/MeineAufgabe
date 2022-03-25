@@ -16,9 +16,20 @@ html
 }
 
 .gridRow {
-    border: 1px solid black;
+    border: 55px solid red;
 }
 
 .cell {
-    border: 1px solid black;
+    border: 10px solid black;
+    size: 100px;
+    background: white;
+    text-align: center;
 }
+
+
+
+.head {
+    font-weight: bold;
+    border: 1px solid #f18e8e;
+    background: #ffbfbf;
+  }
