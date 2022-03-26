@@ -2,7 +2,10 @@ html
 {
     scroll-behavior: smooth;
 }
-
+body
+{
+    background: linear-gradient(46deg, #d32d10,#2bad89 );
+}
 
 .info
 {
@@ -13,23 +16,70 @@ html
     text-align: center;
     width: 100;
     padding: 100px 0;
+    position: relative;
 }
 
 .gridRow {
-    border: 55px solid red;
+    border: 55px solid transparent;
+    width: auto;
+}
+
+.header
+{
+    border: 10px solid black;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    width: 324px;
 }
 
 .cell {
     border: 10px solid black;
-    size: 100px;
-    background: white;
+    margin: 29px;
+    font-size: 43px;
+    background: linear-gradient(46deg, #b210d3,#4bc740 );
+    color: white;
     text-align: center;
+    padding: 100px 0;
+    width: 240px;
+}
+.cellCurent
+{
+    border: 11px solid green;
+    margin: 29px;
+    font-size: 43px;
+    background: linear-gradient(46deg, #440750,#235a1e );
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    width: 240px;
 }
 
 
+.clock
+{
+    text-align: right;
+    font-size: 69px;
+    position:absolute;
+    top:0;
+    right:0;
+}
 
-.head {
-    font-weight: bold;
-    border: 1px solid #f18e8e;
-    background: #ffbfbf;
-  }
+u
+{
+    display: inline-block;
+    text-decoration: none;
+    margin: auto;
+    border-radius: 100;
+    align-items: center;
+}
+
+li{
+    display: inline-block;
+    align-self: baseline;
+    position: relative;
+    top: 9px;
+    left: 125px;
+    margin-right: 4px;
+    border-radius: 3;
+ }
