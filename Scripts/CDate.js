@@ -14,7 +14,7 @@
   let rows = document.getElementsByClassName("gridRow");
   let cells = [];
   
-  var month = now.getUTCMonth();
+  var month = now.getUTCMonth() + 1;
   var year = now.getUTCFullYear();
 
   headerArea.innerText = currentMonth[1] + " " + currentMonth[2] + " " + now.getFullYear(); 
@@ -24,7 +24,7 @@
 
 
 var mondayheader = document.getElementById("Monday");
-var theuheader = document.getElementById("Teusday");
+var theuheader = document.getElementById("Theusday");
 var wednheader = document.getElementById("Wednesday");
 var thursheader = document.getElementById("Thursday");
 var fridheader = document.getElementById("Friday");
@@ -45,192 +45,328 @@ var getDaysInMonth = function(years, months) {
 
 
 
-
+var itsOnMonday = true;
 var firstofMonthison = "Monday";
-function makeColomn(colmNum, months, list = [])
+var lasttofMonthison = "Monday";
+function makeColomn(colmNum, months)
 {
-    var daysInMonth = new Date(year, months , 1);
-  
-
-
-    switch(daysInMonth.getDay())
+   
+    for (let s = 1; s < colmNum; s++) 
     {
-        case 1:
-            console.log("start")
-        break;
+       
+        let cell = document.createElement("div");
+        cells.push(cell);
+        var noww = new Date(year, months - 1, s);
 
+        var nowStrs = noww.toLocaleString(); 
 
-        case 2:
-            console.log("start")
-            firstofMonthison = "tuesday";
-        break;
+        var currentMonthh = nowStrs.split(' '); 
 
-
-        case 3:
-            console.log("start")
-            firstofMonthison = "wednesday";
-         break;
-
-
-        case 4:
-            console.log("start")
-            firstofMonthison = "thursday";
-        break;
-
-
-        case 5:
-            console.log("start")
-            firstofMonthison = "friday";
-        break;
-
-
-        case 6:
-            console.log("start")
-            firstofMonthison = "saturday";
-        break;
-
-
-        case 7:
-            console.log("start")
-            firstofMonthison = "sunday";
-        break;
-    }
-
-
-  
-
-    var firstset = false;
-   for (let indexx = 0; indexx < list.length; indexx++) {
-      
-    for (let index = 0; index < 5; index++) {
-        var div = document.createElement("div")
-        div.className = "cell";
-        cells.push(div);
+        var weekday = noww.toLocaleString("default", { weekday: "long" })
 
      
-
-
-       switch(firstofMonthison)  
+       
+            switch(weekday)
             {
-                case "monday":
-                    if(list[indexx].id == "Monday")
+                case "Monday":
+                    if(s == 1)
                     {
-                        if(!firstset)
-                        {
-
-
-                            div.innerText = "1";
-                            if(cells[0] != div)
-                            {
-                                cells[0].innerText = "h";
-                            }
-
-                            firstset = true;
-                        }
+                        itsOnMonday = true;
                     }
-                    break;
+                break;
 
+                case "Tuesday":
 
-                case "tuesday":
-                    if(list[indexx].id == "Teusday")
+                    if(s == 1)
                     {
-                        if(!firstset)
-                        {
-
-
-                            div.innerText = "1";
-                            if(cells[0] != div)
-                            {
-                                cells[0].innerText = "h";
-
-                            }
-
-                            firstset = true;
-                        }
-                      
-                        
+                        itsOnMonday = false;
+                        firstofMonthison = "Tuesday";
                     }
+
+                    if(getDaysInMonth(year, months) == s)
+                    {
+                        lasttofMonthison = "Tuesday";
+                    }
+
+                   
+                break;
+
+                case "Wednesday":
+                    if(s == 1)
+                    {
+                        itsOnMonday = false;
+                        firstofMonthison = "Wednesday";
+                    }
+
+                    if(getDaysInMonth(year, months) == s)
+                    {
+                        lasttofMonthison = "Wednesday";
+                    }
+                break;
+
+                case "Thursday":
+                    if(s == 1)
+                    {
+                        itsOnMonday = false;
+                        firstofMonthison = "Thursday";
+                    }
+
+                    if(s == getDaysInMonth(year, months))
+                    {
+                        lasttofMonthison = "Thursday";
+                       
+                    }
+                break;
+
+                case "Friday":
+                    if(s == 1)
+                    {
+                        itsOnMonday = false;
+                        firstofMonthison = "Friday";
+                    }
+
+                    
+                    if(getDaysInMonth(year, months) == s)
+                    {
+                        lasttofMonthison = "Friday";
+                    }
+                break;
+
+                case "Saturday":
+                    if(s == 1)
+                    {
+                        itsOnMonday = false;
+                        firstofMonthison = "Saturday";
+                    }
+
+                     
+                    if(getDaysInMonth(year, months) == s)
+                    {
+                        lasttofMonthison = "Saturday";
+                    }
+                break;
+
+                case "Sunday":
+                    if(s == 1)
+                    {
+                        itsOnMonday = false;
+                        firstofMonthison = "Sunday";
+                    }
+
+                    if(getDaysInMonth(year, months) == s)
+                    {
+                        lasttofMonthison = "Sunday";
+                    }
+                break;
+
+            }
+
         
+            switch(firstofMonthison)
+            {
+                case "Tuesday":
+                    wednheader.className = "goToTop";
+                    thursheader.className = "goToTop";
+                    fridheader.className = "goToTop";
+                    saturdheader.className = "goToTop";
+                    sunheader.className = "goToTop";
+
+                break;
+                case "Wednesday":
+
+                    thursheader.className = "goToTop";
+                    fridheader.className = "goToTop";
+                    saturdheader.className = "goToTop";
+                    sunheader.className = "goToTop";
+
+                break;
+                case "Thursday":
+
+                    fridheader.className = "goToTop";
+                    saturdheader.className = "goToTop";
+                    sunheader.className = "goToTop";
+                   
+
+                break;
+                case "Friday":
+                    saturdheader.className = "goToTop";
+                    sunheader.className = "goToTop";
+
+                break;
+                case "Saturday":
+
+                    sunheader.className = "goToTop";
+
                 break;
 
+                case "Sunday":
 
-                case "wednesday":
-                    if(list[indexx].id == "Wednesday")
-                    {
-                        if(!firstset)
-                        {
-
-
-                            div.innerText = "1";
-                            if(cells[0] != div)
-                            {
-                                cells[0].innerText = "h";
-                                    cells[5].innerText = "h";
-
-                            }
-
-                            firstset = true;
-                        }
-                    }
-                    break;
-
-                case "thursday":
-                    if(list[indexx].id == "Teusday")
-                    {
-                        if(!firstset)
-                        {
-
-
-                            div.innerText = "1";
-                            if(cells[0] != div)
-                            {
-                                cells[0].innerText = "h";
-                                    cells[5].innerText = "h";
-                                    cells[10].innerText = "h";
-                                   
-                            }
-
-                            firstset = true;
-                        }
-                    }
-                     break;
-
-
-                case "friday":
-                        if(list[indexx].id == "Friday")
-                        {
-                            if(!firstset)
-                            {
-    
-    
-                                div.innerText = "1";
-                                if(cells[0] != div)
-                                {
-                                    cells[0].innerText = "h";
-                                    cells[5].innerText = "h";
-                                    cells[10].innerText = "h";
-                                    cells[15].innerText = "h";
-
-                                   
-                                }
-    
-                                firstset = true;
-                            }
-                        }
+                    wednheader.className = "goToTop";
+                    thursheader.className = "goToTop";
+                    fridheader.className = "goToTop";
+                    saturdheader.className = "goToTop";
                 break;
+                
+
             }
 
 
-            
+            switch(lasttofMonthison)
+            {
+                case "Tuesday":
+                    theuheader.className = "header";
+                    mondayheader.className = "header";
+                break;
+                case "Wednesday":
+
+                    wednheader.className = "header";
+                    theuheader.className = "header";
+                    mondayheader.className = "header";
+                break;
+                case "Thursday":
+                    thursheader.className = "header";
+                    wednheader.className = "header";
+                    theuheader.className = "header";
+                    mondayheader.className = "header";
+                break;
+
+                case "Friday":
+                    thursheader.className = "header";
+                    wednheader.className = "header";
+                    theuheader.className = "header";
+                    mondayheader.className = "header";
+                    fridheader.className = "header";
+                break;
+                case "Saturday":
+                    thursheader.className = "header";
+                    wednheader.className = "header";
+                    theuheader.className = "header";
+                    mondayheader.className = "header";
+                    fridheader.className = "header";
+                    saturdheader.className = "header";
+                break;
+                case "Sunday":
+                    thursheader.className = "header";
+                    wednheader.className = "header";
+                    theuheader.className = "header";
+                    mondayheader.className = "header";
+                    fridheader.className = "header";
+                    saturdheader.className = "header";
+                    sunheader.className = "header";
+                break;
+
+            }
+
+        cell.innerText = s.toString();
+
+            if(weekday == "Monday")
+            {
+
+           
+
+                if(s == Number(currentMonth[2]))
+                {
+                    mondayheader.appendChild(cell).className = "cellCurent";
+                }else{
+                    mondayheader.appendChild(cell).className = "cell";
+                }
+
+            }
+
+            if(weekday == "Tuesday")
+            {
+
+           
+
+                if(s == Number(currentMonth[2]))
+                {
+                    theuheader.appendChild(cell).className = "cellCurent";
+                }else{
+                    theuheader.appendChild(cell).className = "cell";
+                }
+
+            }
+            if(weekday == "Wednesday")
+            {
+
+           
+
+                if(s == Number(currentMonth[2]))
+                {
+                    wednheader.appendChild(cell).className = "cellCurent";
+                }else{
+                    wednheader.appendChild(cell).className = "cell";
+                }
+
+            }
+
+            if(weekday == "Thursday")
+            {
+
+           
+
+                if(s == Number(currentMonth[2]))
+                {
+                    thursheader.appendChild(cell).className = "cellCurent";
+                }else{
+                    thursheader.appendChild(cell).className = "cell";
+                }
+
+            }
+
+            if(weekday == "Friday")
+            {
+
+           
+
+                if(s == Number(currentMonth[2]))
+                {
+                    fridheader.appendChild(cell).className = "cellCurent";
+                }else{
+                    fridheader.appendChild(cell).className = "cell";
+                }
+
+            }
+
+            if(weekday == "Saturday")
+            {
+
+           
+
+                if(s == Number(currentMonth[2]))
+                {
+                    saturdheader.appendChild(cell).className = "cellCurent";
+                }else{
+                    saturdheader.appendChild(cell).className = "cell";
+                }
+
+            }
+
+            if(weekday == "Sunday")
+            {
+
+           
+
+                if(s == Number(currentMonth[2]))
+                {
+                    sunheader.appendChild(cell).className = "cellCurent";
+                }else{
+                    sunheader.appendChild(cell).className = "cell";
+                }
+
+            }
+
+
         
+    
 
-            list[indexx].appendChild(div);
+   
+    }   
+    
 
-    } 
-   }
-
-
-
+   
+   
+    
 
 
 
@@ -275,7 +411,7 @@ function GetNextMonth()
     Clear();
     var noww = new Date();
     
-    if(currentMonths <= noww.getUTCMonth() + 1) 
+    if(currentMonths <= month) 
     {
         headerArea.className = "info";
     }else
@@ -300,18 +436,18 @@ function GetPreviousMonth()
 
     var nowStr = now.toDateString(); 
     
-    var noww = new Date();
+ 
     
     var currentMonthss = nowStr.split(' '); 
     headerArea.innerText = currentMonthss[1] + " " + currentMonth[2] + " " + now.getFullYear(); 
 
     Clear();
 
-    if(currentMonths >= noww.getUTCMonth() + 1) 
+    if(currentMonths >= month) 
     {
     
         headerArea.className = "info";
-    }else
+    }else 
     {
         headerArea.className = "Lastinfo";
     }
@@ -352,9 +488,7 @@ function ConvertArrayTohtmlWeek(arrayList = [])
 }
 
 
-var list = ["Monday", "Teusday", "Wednesday", "Thursday", "Friday",  "Saturday", "Sunday"];
-var list2 = [];
-
+var list = ["Monday", "Theusday", "Wednesday", "Thursday", "Friday",  "Saturday", "Sunday"];
 
 window.onload = function()
 {
@@ -362,22 +496,14 @@ window.onload = function()
    
     ConvertArrayTohtmlWeek(list);
     mondayheader = document.getElementById("Monday");
-    theuheader = document.getElementById("Teusday");
+    theuheader = document.getElementById("Theusday");
     wednheader = document.getElementById("Wednesday");
     thursheader = document.getElementById("Thursday");
     fridheader = document.getElementById("Friday");
     saturdheader = document.getElementById("Saturday");
     sunheader = document.getElementById("Sunday");
 
-    list2.push(mondayheader);
-    list2.push(theuheader);
-    list2.push(wednheader);
-    list2.push(thursheader);
-    list2.push(fridheader);
-    list2.push(saturdheader);
-    list2.push(sunheader);
-
-    makeColomn(getDaysInMonth(year, month), month, list2);
+    makeColomn(getDaysInMonth(year, month) + 1, month);
 }
 
 

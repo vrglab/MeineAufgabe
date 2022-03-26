@@ -1,7 +1,7 @@
 html 
 {
     scroll-behavior: smooth;
-    height: 1292px;
+    height: 1391px
 }
 body
 {
@@ -87,6 +87,19 @@ body
 }
 
 
+
+.cellHidden {
+    border: 10px solid transparent;
+    margin: 29px;
+    font-size: 43px;
+    background: transparent;
+    color: transparent;
+    text-align: center;
+    padding: 26px 0;
+    width: 125px;
+}
+
+
 .clock
 {
     text-align: right;
@@ -112,7 +125,7 @@ li{
     display: inline-block;
     align-self: baseline;
     position: relative;
-    top: 9px;
+    top: 169px;
     left: 125px;
     margin-right: 4px;
     border-radius: 3;
@@ -129,11 +142,18 @@ li{
     top: -149px;
 }    
 
+button
+{
+    background: linear-gradient(53deg, #10d3a2,#c7407f );
+    color: white;
+}
 
 button.right
 {
     position: absolute;
     left: auto;
+    height: 832px;
+    width: 82px;
  
 }
 
@@ -141,6 +161,8 @@ button.left
 {
     position: absolute;
     right: 12px;
+    height: 832px;
+    width: 82px;
 }
 
 
