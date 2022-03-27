@@ -94,8 +94,8 @@ body.Before
     background: linear-gradient(46deg, #440750,#235a1e );
     color: white;
     text-align: center;
-    padding: 16px 0;
-    width: 103px;
+    padding: 12px 0;
+    width: 98px;
 }
 
 
@@ -121,7 +121,7 @@ div.Curent {
     background: transparent;
     color: transparent;
     text-align: center;
-    padding: 26px 0;
+    padding: 11px 0;
     width: 103px;
 }
 
@@ -166,7 +166,7 @@ li{
     text-align: center;
     width: 163px;
     position: relative;
-    top: -149px;
+    top: -122px;
 }    
 
 button
