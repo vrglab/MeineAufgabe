@@ -165,6 +165,36 @@ button.left
     width: 82px;
 }
 
+button.TopHidden
+{
+    color: transparent;
+    background: transparent;
+    border: transparent;
+    position: absolute;
+    right: 1027px;
+    height: 69px;
+    width: 489px;
+}
+
+button.TopShowLeft
+{
+    position: absolute;
+    left: 102px;
+    height: 831px;
+    width: 99px;
+}
+
+button.TopShowRight
+{
+    position: absolute;
+    right: 102px;
+    height: 831px;
+    width: 99px;
+}
+
+
+
+
 
 @media  screen and (max-width: 1000px) 
 {

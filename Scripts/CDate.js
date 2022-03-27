@@ -31,6 +31,8 @@ var fridheader = document.getElementById("Friday");
 var saturdheader = document.getElementById("Saturday");
 var sunheader = document.getElementById("Sunday");
 
+var backTodateButtton = document.getElementById("BackTodateButton");
+
 
 var getDaysInMonth = function(years, months) {
    daysInMonth = new Date(years, months , 0).getDate();
@@ -373,14 +375,24 @@ function makeColomn(colmNum, months)
 }
 
 
+
+
+var currentMonths = month;
+
 function getCurentDate()
 {
-    headerArea.className = "info";
+    currentMonths = month;
+    var now = new Date(year, currentMonths, 0);
+
+    var nowStr = now.toDateString(); 
+    
+    
+    var currentMonthss = nowStr.split(' '); 
+    headerArea.innerText = currentMonthss[1] + " " + currentMonth[2] + " " + now.getFullYear(); 
+    Clear();
     makeColomn(getDaysInMonth(year, month) + 1, month);
   
 }
-
-var currentMonths = month;
 
 function Clear()
 {
@@ -393,13 +405,14 @@ function Clear()
         cells.length = 0;
 }
 
-
+var goneToNext = false;
+var goneToBefore = false;
 
 function GetNextMonth()
 {
     currentMonths = currentMonths + 1;
     console.log(currentMonths);
-   
+    goneToNext = true;
     var now = new Date(year, currentMonths, 0);
 
     var nowStr = now.toDateString(); 
@@ -409,14 +422,17 @@ function GetNextMonth()
     headerArea.innerText = currentMonthss[1] + " " + currentMonth[2] + " " + now.getFullYear(); 
 
     Clear();
-    var noww = new Date();
-    
-    if(currentMonths <= month) 
+   
+    if(goneToBefore == false)
     {
-        headerArea.className = "info";
-    }else
-    {
-        headerArea.className = "Nextinfo";
+        if(currentMonths <= month) 
+        {
+            headerArea.className = "info";
+        }else
+        {
+            headerArea.className = "Nextinfo";
+        }
+        BackTodateButton.className = "TopShowLeft";
     }
 
 
@@ -431,7 +447,7 @@ function GetPreviousMonth()
 {
     currentMonths = currentMonths - 1;
     console.log(currentMonths);
-   
+    goneToBefore = true;
     var now = new Date(year, currentMonths, 0);
 
     var nowStr = now.toDateString(); 
@@ -442,15 +458,19 @@ function GetPreviousMonth()
     headerArea.innerText = currentMonthss[1] + " " + currentMonth[2] + " " + now.getFullYear(); 
 
     Clear();
-
-    if(currentMonths >= month) 
+    if(goneToNext == false)
     {
-    
-        headerArea.className = "info";
-    }else 
-    {
-        headerArea.className = "Lastinfo";
+        if(currentMonths >= month) 
+        {
+        
+            headerArea.className = "info";
+        }else 
+        {
+            headerArea.className = "Lastinfo";
+        }
+        BackTodateButton.className = "TopShowRight";
     }
+
 
     makeColomn(getDaysInMonth(year, currentMonths) + 1, currentMonths);
 
@@ -469,7 +489,21 @@ setInterval(function() {
 
 
 
-function ConvertArrayTohtmlWeek(arrayList = [])
+setInterval(function() {
+
+
+    if(currentMonths == month)
+    {
+        goneToNext = false;
+        goneToBefore = false;
+        headerArea.className = "info";
+        BackTodateButton.className = "TopHidden";
+    }
+
+}, 2);
+
+
+function ConvertArrayTohtmlWeek(arrayList = [], langlist = [])
 {
             var u = document.createElement("u");
             var container = document.getElementById("container");
@@ -479,7 +513,7 @@ function ConvertArrayTohtmlWeek(arrayList = [])
               var div = document.createElement("div");
               div.className = "header";
               div.id = arrayList[index];
-              div.innerText = arrayList[index];
+              div.innerText = langlist[index];
               li.appendChild(div);
               u.appendChild(li);
             }  
@@ -489,12 +523,13 @@ function ConvertArrayTohtmlWeek(arrayList = [])
 
 
 var list = ["Monday", "Theusday", "Wednesday", "Thursday", "Friday",  "Saturday", "Sunday"];
+var Langlist = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag",  "Samstag", "Sonntag"];
 
 window.onload = function()
 {
    
    
-    ConvertArrayTohtmlWeek(list);
+    ConvertArrayTohtmlWeek(list, Langlist);
     mondayheader = document.getElementById("Monday");
     theuheader = document.getElementById("Theusday");
     wednheader = document.getElementById("Wednesday");
