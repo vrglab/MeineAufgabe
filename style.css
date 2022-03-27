@@ -3,10 +3,22 @@ html
     scroll-behavior: smooth;
     height: 1391px
 }
-body
+
+body.Norm
 {
-    background: linear-gradient(46deg, #d32d10,#2bad89 );
+    background: #9fca99;
 }
+
+body.Next
+{
+    background: #97b9bc;
+}
+
+body.Before
+{
+    background: #dfc0c0;
+}
+
 
 .info
 {
@@ -55,36 +67,50 @@ body
 .header
 {
     border: 10px solid black;
-    color: white;
-    font-size: 40px;
+    color: black;
+    font-size: 35px;
     text-align: center;
-    width: 198px;
+    width: 182px;
 }
 
 
 
 
 .cell {
-    border: 10px solid black;
-    margin: 29px;
+    border: 10px solid #575757;
+    margin: 21px;
     font-size: 43px;
-    background: linear-gradient(46deg, #b210d3,#4bc740 );
-    color: white;
+    background: transparent;
+    color: black;
     text-align: center;
-    padding: 26px 0;
-    width: 125px;
+    padding: 16px 0;
+    width: 103px;
 }
 .cellCurent
 {
-    border: 11px solid green;
-    margin: 29px;
+    border: 11px solid #575757;
+    margin: 24px;
     font-size: 43px;
     background: linear-gradient(46deg, #440750,#235a1e );
     color: white;
     text-align: center;
-    padding: 26px 0;
-    width: 122px;
+    padding: 16px 0;
+    width: 103px;
 }
+
+
+
+div.Curent {
+    border: 10px solid #575757;
+    margin: 29px;
+    font-size: 43px;
+    background: #77d251;
+    color: black;
+    text-align: center;
+    padding: 16px 0;
+    width: 96px;
+}
+
 
 
 
@@ -96,7 +122,7 @@ body
     color: transparent;
     text-align: center;
     padding: 26px 0;
-    width: 125px;
+    width: 103px;
 }
 
 
@@ -105,8 +131,9 @@ body
     text-align: right;
     font-size: 69px;
     position: relative;
-    color: white;
-    top: -350px;
+   
+    
+    top: -229px;
     right: 9px;
 }
 
@@ -118,7 +145,7 @@ u
     margin: -60px;
     border-radius: 100;
     align-items: center;
-    left: 350px;
+    left: 450px;
 }
 
 li{
@@ -134,10 +161,10 @@ li{
 .goToTop
 {
     border: 10px solid black;
-    color: white;
-    font-size: 40px;
+    color: black;
+    font-size: 35px;
     text-align: center;
-    width: 192px;
+    width: 163px;
     position: relative;
     top: -149px;
 }    

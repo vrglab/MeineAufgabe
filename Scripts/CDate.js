@@ -31,6 +31,10 @@ var fridheader = document.getElementById("Friday");
 var saturdheader = document.getElementById("Saturday");
 var sunheader = document.getElementById("Sunday");
 
+
+
+var body = document.getElementById("body");
+
 var backTodateButtton = document.getElementById("BackTodateButton");
 
 
@@ -433,6 +437,14 @@ function GetNextMonth()
             headerArea.className = "Nextinfo";
         }
         BackTodateButton.className = "TopShowLeft";
+        body.className = "Next";
+        for (let index = 0; index < cells.length; index++) {
+            if(cells[index].innerText !=  currentMonth[2] )
+            {
+                cells[index].className = "cell"
+            }
+            
+        }
     }
 
 
@@ -469,6 +481,14 @@ function GetPreviousMonth()
             headerArea.className = "Lastinfo";
         }
         BackTodateButton.className = "TopShowRight";
+        body.className = "Before";
+        for (let index = 0; index < cells.length; index++) {
+            if(cells[index].innerText !=  currentMonth[2] )
+            {
+                cells[index].className = "cell"
+            }
+            
+        }
     }
 
 
@@ -497,6 +517,14 @@ setInterval(function() {
         goneToNext = false;
         goneToBefore = false;
         headerArea.className = "info";
+        body.className = "Norm";
+        for (let index = 0; index < cells.length; index++) {
+            if(cells[index].innerText !=  currentMonth[2] )
+            {
+                cells[index].className = "Curent"
+            }
+            
+        }
         BackTodateButton.className = "TopHidden";
     }
 
