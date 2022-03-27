@@ -3,7 +3,6 @@ html
     scroll-behavior: smooth;
     height: 1391px
 }
-
 body.Norm
 {
     background: #9fca99;
@@ -18,7 +17,6 @@ body.Before
 {
     background: #dfc0c0;
 }
-
 
 .info
 {
@@ -68,9 +66,9 @@ body.Before
 {
     border: 10px solid black;
     color: black;
-    font-size: 35px;
+    font-size: 40px;
     text-align: center;
-    width: 182px;
+    width: 198px;
 }
 
 
@@ -78,26 +76,25 @@ body.Before
 
 .cell {
     border: 10px solid #575757;
-    margin: 21px;
+    margin: 29px;
     font-size: 43px;
     background: transparent;
     color: black;
     text-align: center;
-    padding: 16px 0;
-    width: 103px;
+    padding: 26px 0;
+    width: 125px;
 }
 .cellCurent
 {
     border: 11px solid #575757;
-    margin: 24px;
+    margin: 29px;
     font-size: 43px;
     background: linear-gradient(46deg, #440750,#235a1e );
     color: white;
     text-align: center;
-    padding: 12px 0;
-    width: 98px;
+    padding: 26px 0;
+    width: 122px;
 }
-
 
 
 div.Curent {
@@ -110,10 +107,6 @@ div.Curent {
     padding: 16px 0;
     width: 96px;
 }
-
-
-
-
 .cellHidden {
     border: 10px solid transparent;
     margin: 29px;
@@ -121,8 +114,8 @@ div.Curent {
     background: transparent;
     color: transparent;
     text-align: center;
-    padding: 11px 0;
-    width: 103px;
+    padding: 26px 0;
+    width: 125px;
 }
 
 
@@ -131,8 +124,7 @@ div.Curent {
     text-align: right;
     font-size: 69px;
     position: relative;
-   
-    
+    color: white;
     top: -229px;
     right: 9px;
 }
@@ -145,7 +137,7 @@ u
     margin: -60px;
     border-radius: 100;
     align-items: center;
-    left: 450px;
+    left: 350px;
 }
 
 li{
@@ -162,11 +154,11 @@ li{
 {
     border: 10px solid black;
     color: black;
-    font-size: 35px;
+    font-size: 40px;
     text-align: center;
-    width: 163px;
+    width: 192px;
     position: relative;
-    top: -122px;
+    top: -149px;
 }    
 
 button

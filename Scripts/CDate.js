@@ -30,13 +30,8 @@ var thursheader = document.getElementById("Thursday");
 var fridheader = document.getElementById("Friday");
 var saturdheader = document.getElementById("Saturday");
 var sunheader = document.getElementById("Sunday");
-
-
-
 var body = document.getElementById("body");
-
 var backTodateButtton = document.getElementById("BackTodateButton");
-
 
 var getDaysInMonth = function(years, months) {
    daysInMonth = new Date(years, months , 0).getDate();
@@ -436,7 +431,7 @@ function GetNextMonth()
         {
             headerArea.className = "Nextinfo";
         }
-        BackTodateButton.className = "TopShowLeft";
+        BackTodateButton.className = "TopShowLeft";    
         body.className = "Next";
         for (let index = 0; index < cells.length; index++) {
             if(cells[index].innerText !=  currentMonth[2] )
@@ -524,7 +519,7 @@ setInterval(function() {
                 cells[index].className = "Curent"
             }
             
-        }
+        }        BackTodateButton.className = "TopHidden";  
         BackTodateButton.className = "TopHidden";
     }
 
