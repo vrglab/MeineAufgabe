@@ -76,36 +76,42 @@ body.Before
 
 .cell {
     border: 10px solid #575757;
-    margin: 29px;
+    margin: 21px;
     font-size: 43px;
     background: transparent;
     color: black;
     text-align: center;
-    padding: 26px 0;
-    width: 125px;
+    padding: 16px 0;
+    width: 96px;
+    position: relative;
+    left: 25px;
 }
 .cellCurent
 {
-    border: 11px solid #575757;
-    margin: 29px;
+    border: 8px solid #575757;
+    margin: 24px;
     font-size: 43px;
     background: linear-gradient(46deg, #440750,#235a1e );
     color: white;
     text-align: center;
-    padding: 26px 0;
-    width: 122px;
+    padding: 12px 0;
+    width: 98px;
+    position: relative;
+    left: 25px;
 }
 
 
 div.Curent {
-    border: 10px solid #575757;
+    border: 10px solid rgb(87, 87, 87);
     margin: 29px;
     font-size: 43px;
-    background: #77d251;
+    background: rgb(119, 210, 81);
     color: black;
     text-align: center;
-    padding: 16px 0;
+    padding: 16px 0px;
     width: 96px;
+    position: relative;
+    left: 25px;
 }
 .cellHidden {
     border: 10px solid transparent;
@@ -211,9 +217,24 @@ button.TopShowRight
     width: 99px;
 }
 
+.GridCOntainer
+{
+    position: ABSOLUTE;
+    left: 320px;
+    display: grid;
+    grid-column: 8;
+    grid-template-rows: auto;
+    padding: 26px;
+    width: 1673px;
+    grid-template-areas: 'header header header header header header header';
+}
 
-
-
+.cellHidden
+{
+    color: transparent;
+    background: transparent;
+    border: transparent;
+}
 
 @media  screen and (max-width: 1000px) 
 {

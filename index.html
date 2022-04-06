@@ -17,19 +17,23 @@
 </section>
 
 <section> 
-    <div id="container">
+    <div id="container" class="GridCOntainer">
 
         
-        <button class="right" onclick="GetPreviousMonth()">Zurück</button>
-        <button class="left" onclick="GetNextMonth()">Nächste</button>
-        <button id="BackTodateButton" class="TopHidden" onclick="getCurentDate()">Zurück zu Heute</button>
+       
 
     
 
-
+        <div class="header" id="Monday">Montag</div>
+        <div class="header" id="Theusday">Dienstag</div> 
+        <div class="header" id="Wednesday">Mittwoch</div>
+        <div class="header" id="Thursday">Donnerstag</div>
+        <div class="header" id="Friday">Freitag</div>
+        <div class="header" id="Saturday">Samstag</div>
+        <div class="header" id="Sunday">Sonntag</div>
        
 
-        
+     
 
 
     
@@ -37,19 +41,22 @@
 
     </div>
 
-    
+    <button class="right" onclick="GetPreviousMonth()">Zurück</button>
+    <button class="left" onclick="GetNextMonth()">Nächste</button>
+    <button id="BackTodateButton" class="TopHidden" onclick="getCurentDate()">Zurück zu Heute</button>
 
 
 
 </section>
 
-
+<script ></script>
     
 </body>
 
 
-<script src="Scripts/CDate.js"> </script>
 
+
+<script src="Scripts/CDate.js"> </script>
 
 
 
