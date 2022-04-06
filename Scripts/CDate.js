@@ -68,7 +68,7 @@ function makeColomn(colmNum, months)
 
             cell.innerText = s.toString();
 
-        console.log(weekday);
+            console.log(currentMonth[2]);
 
             if(s==1)
             {
@@ -455,10 +455,13 @@ setInterval(function() {
         headerArea.className = "info";
         body.className = "Norm";
         for (let index = 0; index < cells.length; index++) {
-            if(cells[index].innerText !=  currentMonth[2] )
+            if(cells[index].innerText ==  currentMonth[2] )
             {
-                cells[index].className = "Curent"
+                cells[index].className = "cell"
             }
+
+          
+            
             
         }        BackTodateButton.className = "TopHidden";  
         BackTodateButton.className = "TopHidden";
